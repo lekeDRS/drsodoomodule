@@ -1,0 +1,28 @@
+<odoo>
+    <record id="view_res_partner_form_inherit" model="ir.ui.view">
+        <field name="name">DRS Company Custom Fields</field>
+        <field name="model">res.partner</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="supplier_code"/>
+                <field name="name_local" string="Local name"/>
+                <field name="short_name_en_us" string="Short name EU/US"/>
+                <field name="short_name_local" string="Short name local"/>
+                <field name="company_currency" string="Currency"/>
+                <field name="company_country" string="Country"/>
+                <field name="is_drs_company" string="Owned by DRS"/>
+            </xpath>
+
+            <xpath expr="//field[@name='lang']" position="after">
+                <field name="is_supplier" string="Is Supplier"/>
+                <field name="official_registration_number" string="Official Registration Number"/>
+                <field name="bank_name" string="Name of bank"/>
+                <field name="bank_branch_name" string="Bank branch name"/>
+                <field name="bank_account_code" string="Bank account code"/>
+                <field name="bank_account_name" string="Bank account name"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

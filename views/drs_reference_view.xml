@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record model="ir.ui.view" id="refinfo_form_view">
+        <field name="name">refinfo.form</field>
+        <field name="model">drs.refinfo</field>
+        <field name="arch" type="xml">
+            <form string="Reference Info Form">
+                <sheet>
+                    <group>
+                        <field name="product_name"/>
+                        <field name="filename" string="Filename"/>
+                        <field name="link" string="File Link"/>
+                        <field name="type" string="Reference Type"/>
+                        <field name="appliedVariationProduct" string="Applicable SKU"/>
+                        <field name="applicableRegion" string="Applicable regions"/>
+                        <field name="description" string="Description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="refinfo_list_view" model="ir.ui.view">
+        <field name="name">Product Reference Info</field>
+        <field name="model">drs.refinfo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_name"/>
+                <field name="filename" string="Filename"/>
+                <field name="link" string="File Link"/>
+                <field name="type" string="Reference Type"/>
+                <field name="appliedVariationProduct" string="Applicable SKU"/>
+                <field name="applicableRegion" string="Applicable regions"/>
+                <field name="description" string="Description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="refinfo_list_action">
+        <field name="name">Reference information</field>
+        <field name="res_model">drs.refinfo</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="DRS Views" id="drs_module.menu_root"/>
+    <menuitem name="Reference Information" id="drs_module.menu_1_list" parent="drs_module.menu_root"
+              action="refinfo_list_action"/>
+</odoo>

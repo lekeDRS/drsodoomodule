@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_product_template_form_inherit" model="ir.ui.view">
+        <field name="name">DRS Custom Fields</field>
+        <field name="model">product.template</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='general_information']" position="inside">
+                <group name="Custom Fields">
+                    <group string="Basic Information">
+                        <field name="company_code" string="Supplier code"/>
+                        <field name="product_name_chi" string="Product name (Chinese)"/>
+                        <field name="product_category" string="Proposed product category"/>
+                        <field name="brand_name_eng" string="Brand name(English)"/>
+                        <field name="brand_name_chi" string="Brand name(Chinese)"/>
+                        <field name="sup_product_code" string="Supplier base product code"/>
+                        <field name="drs_product_code" string="DRS base product code"/>
+                        <field name="mlt" string="Manufacturing lead time (MLT) [days]"/>
+                        <field name="allergy_warning" string="Product contains material that may cause allergies"/>
+                        <field name="product_material_percentage" string="Product material and percentage"/>
+                        <field name="product_link" string="Product reference link"/>
+                        <field name="refinfo_ids" string="Reference Files"/>
+                    </group>
+                    <group string="Compliance Information">
+                        <field name="countryoforigin" string="Country of origin"/>
+                        <field name="medicaldevice" string="Is the product a medical device?"/>
+                        <field name="wireless" string="Wireless Technology"/>
+                        <field name="otherwireless" string="Other wireless technology"/>
+                        <field name="hscode" string="HS code for supply-side region"/>
+                        <field name="importexport" string="Import/export requirements for supply-side region"/>
+                        <field name="containmaterial" string="Does the product contain any of these material?"/>
+                        <field name="potentialhazards" string="Other potentially hazardous materials"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
